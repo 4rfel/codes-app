@@ -141,18 +141,18 @@ input:checked + .slider:before
 
 .list-group li
 {
-    font-size: 20px;
-    background: transparent !important;
+    font-size  : 20px;
+    background : transparent !important;
 }
 
 .list-group:first-child
 {
-    border-top: solid 1px #BBBBBB;
+    border-top : solid 1px #BBBBBB;
 }
 
 .list-group:last-child
 {
-    border-bottom: solid 1px #BBBBBB;
+    border-bottom : solid 1px #BBBBBB;
 }
 
 .large-letter
@@ -236,9 +236,11 @@ input:checked + .slider:before
     font-size : 80px !important;
 }
 
-.click:hover, .click.active
+.click:hover, .click.selected
 {
-    background-color : #d6d6d6
+    background-color : #d6d6d6;
+    display          : block;
+    cursor           : pointer;
 }
 
 .p50
@@ -249,7 +251,8 @@ input:checked + .slider:before
 
 .marg-top
 {
-    margin-top : 200px !important;
+    margin-top    : 70px !important;
+    margin-bottom : 10px;
 }
 
 /* .scale2{
@@ -283,12 +286,11 @@ ul.high-score
 
 ul.high-score li
 {
-    border-bottom  : solid 1px #bbb;
-    margin         : 15px 0;
-    padding-bottom : 15px;
+    border-bottom : solid 1px #bbb;
+    padding       : 15px 10px;
 }
 
-ul.high-score:first-child
+ul.high-score li:first-child
 {
     border-top : solid 1px #bbb;
 }
