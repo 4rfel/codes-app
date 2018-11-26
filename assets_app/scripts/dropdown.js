@@ -20,9 +20,9 @@ $(document).ready(function ()
         var elements = $('.click');
         elements.each(function ()
         {
-            $(this).removeClass('active');
+            $(this).removeClass('selected');
         });
-        $(this).addClass('active');
+        $(this).addClass('selected');
     });
 
     $('#submit_quiz').click(function ()
@@ -31,7 +31,7 @@ $(document).ready(function ()
         var elements = $('.click');
         elements.each(function ()
         {
-            $(this).removeClass('active');
+            $(this).removeClass('selected');
         });
 
         // Faz alguma coisa quando clica no botão enviar

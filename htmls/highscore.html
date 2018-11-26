@@ -1,62 +1,49 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)https://4rfel.github.io/CODESASTRE-FINAL/htmls/highscore.html -->
-<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Choosing the charset, in this case, utf-8 -->
-        
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="../assets_app/css/master.css">
+    <title>CarQuiz</title>
+</head>
+<body class="white-smoke">
+<!-- Sidebar -->
+<button type="button" class="btn btn-info sidebarCollapse">
+    <span><i class="fa fa-bars"></i> Menu</span>
+</button>
 
-        <!-- Adding a reference to an outside file -->
-        <link rel="stylesheet" href="./highscore_files/materialize.min.css">
-        <link rel="stylesheet" href="./highscore_files/master.css">
+<nav class="sidebar">
+    <span class="float-right sidebarCollapse"><i class="fa fa-times" style="font-size:28px;margin:10px 15px"></i></span>
+    <ul class="list-unstyled components">
+        <li><a href="quiz.html"><img class="responsive-img centralize pad-top centralize" src="../assets_app/image/quiz.png"/></a></li>
+        <li><a href="../index.html"><img class="responsive-img centralize pad-top centralize" src="../assets_app/image/user_icon.png"/></a></li>
+        <li><a href="highscore.html"><img class="responsive-img centralize pad-top centralize" src="../assets_app/image/trophy_icon.png"/></a></li>
+    </ul>
+</nav>
 
-
-        <!-- Text written on the browser's tab -->
-        <title>CarQuiz</title>
-    </head><!-- Compiled and minified CSS -->
-
-
-
-  <body class="white-smoke" cz-shortcut-listen="true">
-
+<div class="container">
     <div class="row">
-         <div class="col s2 #1a237e indigo darken-1 fix full-height">
-           <a href="https://4rfel.github.io/CODESASTRE-FINAL/htmls/quiz.html"><img class=" responsive-img centralize pad-top centralize" src="./highscore_files/quiz.png"></a>
-           <a href="https://4rfel.github.io/CODESASTRE-FINAL/index.html"><img class=" responsive-img centralize pad-top centralize" src="./highscore_files/user_icon.png"></a>
-           <a href="https://4rfel.github.io/CODESASTRE-FINAL/htmls/highscore.html"><img class=" responsive-img centralize pad-top centralize" src="./highscore_files/trophy_icon.png"></a>
-         </div>
-
-
-         <div class="col g6 offset-s4">
-           <br><br><br><br><br>
-              <img class="circle responsive-img" src="./highscore_files/trophy_icon.png" height="460px" width="460px" alt="aa">
-         </div>
+        <div class="col-md-12 text-center">
+            <img class="img-fluid text" src="../assets_app/image/trophy_icon.png" alt="perfil">
+        </div>
+        <div class="col-md-12">
+            <ul class="high-score text-center" style="margin-top:50px">
+                <li>Arfel</li>
+                <li>Franklin</li>
+                <li>xSuco</li>
+            </ul>
+        </div>
     </div>
+</div>
 
-    <div class="row">
-      <div class="col s8 offset-s3">
-        <ul class="high-score m-letter center">
-            <li>Você</li>
-            <li>Jose</li>
-            <li>Luisa</li>
-            <li>Chris</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-            <li>Arfel</li>
-</ul>
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="../assets_app/scripts/dropdown.js"></script>
 
-      </div>
-
-    </div>
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="./highscore_files/jquery-3.3.1.min.js.download"></script>
-    <script src="./highscore_files/materialize.min.js.download"></script>
-    <script src="./highscore_files/dropdown.js.download"></script>
-
-  
-
-<div id="hashmenu01" style="display: none;"></div></body></html>
+</body>
+</html>
