@@ -1,0 +1,24 @@
+{
+  "perguntas": {
+    "0": {
+      "pergunta": "Qual a cor do cavalo branco?",
+      "respostas": {
+        "0": "Azul",
+        "1": "Branco",
+        "2": "Amarelo",
+        "3": "Rosa"
+      },
+      "resposta_correta": 1
+    },
+    "1": {
+      "pergunta": "Onde fica o Japão?",
+      "respostas": {
+        "0": "América do Sul",
+        "1": "África",
+        "2": "Ásia",
+        "3": "Europa"
+      },
+      "resposta_correta": 2
+    }
+  }
+}

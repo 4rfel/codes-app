@@ -1,17 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // let db = new DB('https://co-des.firebaseio.com')
-    let db = new DB('https://desgosto-final.firebaseio.com/')
-
-    db.download("/", function(data) {
-        // Printing the data contained on that path on firebase
-        console.log(data)
-
-
-    })
-})
-console.log(data);
-
-
 $(document).ready(function ()
 {
     // Carrega quiz
