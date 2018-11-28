@@ -6,14 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-var i = 1
-function evento(){
-  i += 1
-  console.log(i);
-  let questao = document.querySelector('.souburro')
-  questao.innerHTML = "Questão número: " + i
-
-}
 
 
 
@@ -37,26 +29,28 @@ $(document).ready(function ()
            });
 
           // Faz alguma coisa quando clica no botão enviar
-          console.log('e');
        });
        $('.dropdown-trigger').dropdown({
             closeOnClick: false,
         });
     });
 
+
+// console.log(data);
 $(document).ready(function ()
 {
     // Carrega quiz
-    var num_pergunta = 0;
+    var num_pergunta = 1;
     var pontos = 0;
+//
+    // document.addEventListener('DOMContentLoaded', function() {
+      // let db = new DB('https://co-des.firebaseio.com')
+      let db = new DB('https://coisa-62403.firebaseio.com/')
 
-    let db = new DB('https://desgosto-final.firebaseio.com/')
-
-    db.download("/", function(data)
-    {
-      console.log('resp:');
-      console.log(data['perguntas'][num_pergunta]['resposta_correta']);
-        $('.pergunta').html(data["perguntas"][num_pergunta]['pergunta']);
+      db.download("/", function(data) {
+        // Printing the data contained on that path on firebase
+        console.log(data["perguntas"][num_pergunta]['respostas'][1]);
+        $('.pergunta').html(data['perguntas'][(num_pergunta)]['pergunta']);
         $('.resp1').html(data["perguntas"][num_pergunta]['respostas'][0]);
         $('.resp2').html(data["perguntas"][num_pergunta]['respostas'][1]);
         $('.resp3').html(data["perguntas"][num_pergunta]['respostas'][2]);
@@ -80,23 +74,22 @@ $(document).ready(function ()
 
     $('#submit_quiz').click(function ()
     {
-      db.download("/", function(data){
         // Verifica resposta correta
-        var resposta_correta = data['perguntas'][num_pergunta]['resposta_correta'];
-        var answer = $(document).find('.selected').data('id')+1;
-        console.log('certa: ' + resposta_correta);
-        console.log('dada: ' + answer);
+        db.download('/', function(data){
+        var resposta_correta = data['perguntas'][num_pergunta]['resposta_correta']
+        console.log(resposta_correta);
+        var answer = $(document).find('.selected').data('id');
+        console.log("real: " + resposta_correta);
+        console.log("dada: " + answer);
         if (resposta_correta === answer)
         {
-          console.log('acertou');
             pontos += 1;
             $('.pontos').html("Pontos: " + pontos);
-          };
-        });
-      });
+        }
+
         // Incrementa pergunta
         num_pergunta += 1;
-        $('.souburro').html("Questão número: " + (num_pergunta));
+        $('.souburro').html("Questão número: " + num_pergunta);
 
         // Desseleciona a resposta selecionada
         var elements = $('.click');
@@ -104,18 +97,16 @@ $(document).ready(function ()
         {
             $(this).removeClass('selected');
         });
-        db.download("/", function(data){
-          console.log('resp:');
-          console.log(data['perguntas'][num_pergunta]['resposta_correta']);
-        $('.pergunta').html(data["perguntas"][num_pergunta]['pergunta']);
-        $('.resp1').html(data["perguntas"][num_pergunta]['respostas'][0]);
-        $('.resp2').html(data["perguntas"][num_pergunta]['respostas'][1]);
-        $('.resp3').html(data["perguntas"][num_pergunta]['respostas'][2]);
-        $('.resp4').html(data["perguntas"][num_pergunta]['respostas'][3]);
-        });
 
+        $('.pergunta').html(data['perguntas'][(num_pergunta)]['pergunta']);
+        $('.resp1').html(data["perguntas"][(num_pergunta)]['respostas'][0]);
+        $('.resp2').html(data["perguntas"][(num_pergunta)]['respostas'][1]);
+        $('.resp3').html(data["perguntas"][(num_pergunta)]['respostas'][2]);
+        $('.resp4').html(data["perguntas"][(num_pergunta)]['respostas'][3]);
+    });
+  });
 
     $('.dropdown-trigger').dropdown({
         closeOnClick: false,
     });
-});
+  });
